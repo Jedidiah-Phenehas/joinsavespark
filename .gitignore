@@ -1,0 +1,6 @@
+*.jks
+key.properties
+*.env
+*.apk
+node_modules/
+build/
