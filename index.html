@@ -1,31 +1,51 @@
 <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST">
   <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;" />
   <br><br>
-  <button type="submit" style="padding:10px 20px; background:#007BFF; color:white; border:none; border-radius:8px;">Join Waitlist</button>
-  <p id="form-message" style="margin-top:15px; color:green;"></p>
+  <button type="submit" id="submit-button" style="padding:10px 20px; background:#007BFF; color:white; border:none; border-radius:8px;">Join Waitlist</button>
+  <p id="form-message" style="margin-top:15px;"></p>
 </form>
 
 <script>
   const form = document.getElementById("waitlist-form");
+  const button = document.getElementById("submit-button");
   const message = document.getElementById("form-message");
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
 
-    if (response.ok) {
-      message.textContent = "🎉 Thank you! You're on the waitlist.";
-      form.reset();
-    } else {
+    // Reset message
+    message.textContent = "";
+    message.style.color = "black";
+
+    // Show loading
+    button.disabled = true;
+    button.textContent = "⏳ Joining...";
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        message.textContent = "🎉 Thank you! You're on the waitlist.";
+        message.style.color = "green";
+        form.reset();
+      } else {
+        throw new Error("Formspree error");
+      }
+    } catch (error) {
       message.textContent = "⚠️ Oops! Something went wrong. Try again.";
       message.style.color = "red";
     }
+
+    // Reset button
+    button.disabled = false;
+    button.textContent = "Join Waitlist";
   });
 </script>
