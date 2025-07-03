@@ -6,15 +6,29 @@
   <title>JoinSaveSpark - Automate Your Savings</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
   <style>
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
     body {
-     font-family: 'Inter', sans-serif;
-  background: #f9fafb;
+    body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #eef2ff, #f9fafb);
   margin: 0;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #111827;
+}
     }
     h1 {
       font-size: 2rem;
@@ -61,6 +75,19 @@
       margin-top: 20px;
       color: green;
     }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
 
@@ -74,7 +101,7 @@
     <h1>Join SaveSpark 🚀</h1>
     <h2>Automate your savings and take control of your money — effortlessly.</h2>
 
-    <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="showThankYou(event)">
+    <form id="waitlist-form" class="fade-in" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="showThankYou(event)">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Join the Waitlist</button>
     </form>
@@ -84,7 +111,7 @@
     </div>
 
   </div>
-  <div style="margin-top: 2rem; text-align: center;">
+  <div class="fade-in" style="margin-top: 2rem; text-align: center;">
   <h3 style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 600;">What You'll Get with SaveSpark</h3>
   <ul style="list-style: none; padding: 0; font-size: 1rem; color: #374151;">
     <li>✅ Auto-Save Smart Amounts</li>
@@ -92,7 +119,7 @@
     <li>🔔 Personalized Saving Reminders</li>
   </ul>
 </div>
-<div style="margin-top: 2.5rem; background: white; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px; max-width: 400px; width: 100%; text-align: left;">
+<div class="fade-in" style="margin-top: 2.5rem; background: white; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px; max-width: 400px; width: 100%; text-align: left;">
   <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: #111827;">📱 Sneak Peek: SaveSpark Dashboard</h3>
 
   <div style="margin-bottom: 1rem;">
