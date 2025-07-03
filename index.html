@@ -1,51 +1,109 @@
-<form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST">
-  <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;" />
-  <br><br>
-  <button type="submit" id="submit-button" style="padding:10px 20px; background:#007BFF; color:white; border:none; border-radius:8px;">Join Waitlist</button>
-  <p id="form-message" style="margin-top:15px;"></p>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JoinSaveSpark - Automate Your Savings</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #111827;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+      color: #6b7280;
+      text-align: center;
+      max-width: 500px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 400px;
+    }
+    input[type="email"] {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
+    }
+    button {
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .thank-you {
+      display: none;
+      font-weight: 600;
+      margin-top: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
 
-<script>
-  const form = document.getElementById("waitlist-form");
-  const button = document.getElementById("submit-button");
-  const message = document.getElementById("form-message");
+  <div>
+    <h1>Join SaveSpark 🚀</h1>
+    <h2>Automate your savings and take control of your money — effortlessly.</h2>
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="showThankYou(event)">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join the Waitlist</button>
+    </form>
 
-    // Reset message
-    message.textContent = "";
-    message.style.color = "black";
+    <div class="thank-you" id="thank-you-message">
+      🎉 You're on the list! We'll be in touch soon.
+    </div>
+  </div>
 
-    // Show loading
-    button.disabled = true;
-    button.textContent = "⏳ Joining...";
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      const form = document.getElementById('waitlist-form');
+      const thankYou = document.getElementById('thank-you-message');
 
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch(form.action, {
+      const formData = new FormData(form);
+      fetch(form.action, {
         method: form.method,
         body: formData,
         headers: {
           'Accept': 'application/json'
         }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          thankYou.style.display = 'block';
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
       });
-
-      if (response.ok) {
-        message.textContent = "🎉 Thank you! You're on the waitlist.";
-        message.style.color = "green";
-        form.reset();
-      } else {
-        throw new Error("Formspree error");
-      }
-    } catch (error) {
-      message.textContent = "⚠️ Oops! Something went wrong. Try again.";
-      message.style.color = "red";
     }
+  </script>
 
-    // Reset button
-    button.disabled = false;
-    button.textContent = "Join Waitlist";
-  });
-</script>
+</body>
+</html>
