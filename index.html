@@ -67,31 +67,25 @@
 </head>
 <body>
   <div class="container">
-    <!-- LOGO -->
     <img src="logo.png" alt="SaveSpark Logo" class="logo" />
-
     <h1>Join SaveSpark</h1>
     <p>Be the first to automate your savings and take control of your money.</p>
 
-    <!-- WAITLIST FORM -->
     <form id="waitlist-form" action="https://usebasin.com/f/86748ffb3449" method="POST" onsubmit="return showThankYou(event)">
       <input type="email" name="email" placeholder="Enter your email" required />
       <br>
       <button type="submit">Join Waitlist</button>
     </form>
 
-    <!-- THANK YOU MESSAGE -->
     <div id="thank-you">
       🎉 Thank you! You're on the waitlist.
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     &copy; 2025 SaveSpark. All rights reserved.
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     function showThankYou(event) {
       event.preventDefault();
