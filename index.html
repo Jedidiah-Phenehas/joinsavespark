@@ -1,54 +1,159 @@
-<form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="return showThankYou(event)">
-  <input type="email" name="email" placeholder="Enter your email" required style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;">
-  <button type="submit" style="padding:10px 20px; border-radius:8px; background:#2ecc71; color:#fff; border:none;">Join Waitlist</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join SaveSpark – Automate Your Savings</title>
 
-<div id="thank-you" style="display:none; margin-top:15px; color:green; font-weight:600;">
-  🎉 Thank you! You're on the waitlist.
-</div>
+  <!-- Font (Optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
-<script>
-  function showThankYou(event) {
-    event.preventDefault();
-    const form = document.getElementById('waitlist-form');
-    const thankYou = document.getElementById('thank-you');
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      text-align: center;
+    }
 
-    // Submit the form using AJAX
-    const formData = new FormData(form);
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.style.display = "none";
-        thankYou.style.display = "block";
-      } else {
-        alert("Oops! There was a problem. Please try again.");
-      }
-    });
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 50px;
+      color: #2ecc71;
+    }
 
-    return false;
-  }
-</script>
-<style>
-  #thank-you {
-    opacity: 0;
-    transition: opacity 0.8s ease;
-  }
-  #thank-you.show {
-    display: block;
-    opacity: 1;
-  }
-</style>
-<footer style="margin-top: 50px; padding: 20px; text-align: center; font-size: 14px; color: #555;">
-  <hr style="margin-bottom: 15px;">
-  <p>&copy; 2025 SaveSpark. All rights reserved.</p>
-  <p>
-    <a href="/privacy-policy" style="margin: 0 10px; color: #2ecc71; text-decoration: none;">Privacy Policy</a> |
-    <a href="/terms" style="margin: 0 10px; color: #2ecc71; text-decoration: none;">Terms of Use</a> |
-    <a href="mailto:team@joinsavespark.com" style="margin: 0 10px; color: #2ecc71; text-decoration: none;">Contact Us</a>
-  </p>
-</footer>
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
 
-thankYou.classList.add("show");
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="email"] {
+      padding: 10px;
+      width: 250px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #2ecc71;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #thank-you {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #2ecc71;
+      text-decoration: none;
+    }
+
+    hr {
+      margin-bottom: 15px;
+    }
+
+    /* Fade-in animation styles */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="fade-in">SaveSmarter. Live Better.</h1>
+  <p class="fade-in">Join the waitlist and take control of your savings today.</p>
+
+  <div class="fade-in">
+    <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="return showThankYou(event)">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join Waitlist</button>
+    </form>
+
+    <div id="thank-you">
+      🎉 Thank you! You're on the waitlist.
+    </div>
+  </div>
+
+  <footer class="fade-in">
+    <hr />
+    <p>&copy; 2025 SaveSpark. All rights reserved.</p>
+    <p>
+      <a href="/privacy-policy">Privacy Policy</a> |
+      <a href="/terms">Terms of Use</a> |
+      <a href="mailto:team@joinsavespark.com">Contact Us</a>
+    </p>
+  </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    function fadeInOnScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      const windowHeight = window.innerHeight;
+
+      elements.forEach(el => {
+        const position = el.getBoundingClientRect().top;
+        if (position < windowHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
+  </script>
+
+  <!-- Form Confirmation Script -->
+  <script>
+    function showThankYou(event) {
+      event.preventDefault();
+      const form = document.getElementById('waitlist-form');
+      const thankYou = document.getElementById('thank-you');
+
+      const formData = new FormData(form);
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = "none";
+          thankYou.style.display = "block";
+        } else {
+          alert("Oops! There was a problem. Please try again.");
+        }
+      });
+
+      return false;
+    }
+  </script>
+</body>
+</html>
