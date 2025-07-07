@@ -5,7 +5,9 @@
 
 <div id="thank-you" style="display:none; margin-top:15px; color:green; font-weight:600;">
   🎉 Thank you! You're on the waitlist.
-  <script>
+</div>
+
+<script>
   function showThankYou(event) {
     event.preventDefault();
     const form = document.getElementById('waitlist-form');
@@ -29,4 +31,14 @@
     return false;
   }
 </script>
-</div>
+<style>
+  #thank-you {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  #thank-you.show {
+    display: block;
+    opacity: 1;
+  }
+</style>
+thankYou.classList.add("show");
