@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join SaveSpark – Automate Your Savings</title>
 
-  <!-- Font (Optional) -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 
   <style>
@@ -74,7 +74,7 @@
       margin-bottom: 15px;
     }
 
-    /* Fade-in animation styles */
+    /* Fade-in animation */
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -91,6 +91,11 @@
 <body>
   <h1 class="fade-in">SaveSmarter. Live Better.</h1>
   <p class="fade-in">Join the waitlist and take control of your savings today.</p>
+
+  <!-- 💥 New: Waitlist Counter -->
+  <p id="waitlist-count" class="fade-in" style="font-weight:600; font-size:18px; color:#555;">
+    🎉 <span id="signup-number">0</span> people already joined the waitlist!
+  </p>
 
   <div class="fade-in">
     <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="return showThankYou(event)">
@@ -131,7 +136,7 @@
     window.addEventListener('load', fadeInOnScroll);
   </script>
 
-  <!-- Form Confirmation Script -->
+  <!-- Form Submit Script -->
   <script>
     function showThankYou(event) {
       event.preventDefault();
@@ -154,6 +159,25 @@
 
       return false;
     }
+  </script>
+
+  <!-- Waitlist Counter Animation -->
+  <script>
+    const targetCount = 124; // <-- Change this number manually as your waitlist grows
+    let currentCount = 0;
+
+    function animateCounter() {
+      const numberEl = document.getElementById('signup-number');
+      const interval = setInterval(() => {
+        currentCount++;
+        numberEl.textContent = currentCount;
+        if (currentCount >= targetCount) {
+          clearInterval(interval);
+        }
+      }, 20);
+    }
+
+    window.addEventListener('load', animateCounter);
   </script>
 </body>
 </html>
