@@ -10,68 +10,92 @@
 
   <style>
     body {
-      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
       color: #333;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437b1?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 40px 20px;
+      color: #fff;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 50px;
-      color: #2ecc71;
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
     }
 
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 25px;
     }
 
     form {
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      max-width: 400px;
+      margin: 0 auto;
     }
 
     input[type="email"] {
-      padding: 10px;
-      width: 250px;
+      padding: 12px;
+      width: 90%;
+      max-width: 300px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: none;
     }
 
     button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       border-radius: 8px;
       background: #2ecc71;
       color: #fff;
       border: none;
       cursor: pointer;
+      font-weight: 600;
     }
 
     #thank-you {
       display: none;
       margin-top: 15px;
-      color: green;
+      color: #fff;
       font-weight: 600;
     }
 
+    #waitlist-count {
+      font-weight: 600;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
     footer {
-      margin-top: 50px;
-      padding: 20px;
+      background-color: #fff;
       text-align: center;
+      padding: 20px;
       font-size: 14px;
       color: #555;
     }
 
     footer a {
-      margin: 0 10px;
       color: #2ecc71;
+      margin: 0 10px;
       text-decoration: none;
-    }
-
-    hr {
-      margin-bottom: 15px;
     }
 
     /* Fade-in animation */
@@ -85,19 +109,29 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1 class="fade-in">SaveSmarter. Live Better.</h1>
-  <p class="fade-in">Join the waitlist and take control of your savings today.</p>
+  <section class="hero fade-in">
+    <h1>Save Smarter. Live Better.</h1>
+    <p>Join SaveSpark to automate your savings effortlessly and take control of your financial future.</p>
 
-  <!-- 💥 New: Waitlist Counter -->
-  <p id="waitlist-count" class="fade-in" style="font-weight:600; font-size:18px; color:#555;">
-    🎉 <span id="signup-number">0</span> people already joined the waitlist!
-  </p>
+    <!-- ✅ Waitlist Counter -->
+    <p id="waitlist-count">
+      🎉 <span id="signup-number">0</span> people already joined the waitlist!
+    </p>
 
-  <div class="fade-in">
     <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST" onsubmit="return showThankYou(event)">
       <input type="email" name="email" placeholder="Enter your email" required />
       <button type="submit">Join Waitlist</button>
@@ -106,7 +140,7 @@
     <div id="thank-you">
       🎉 Thank you! You're on the waitlist.
     </div>
-  </div>
+  </section>
 
   <footer class="fade-in">
     <hr />
@@ -163,7 +197,7 @@
 
   <!-- Waitlist Counter Animation -->
   <script>
-    const targetCount = 124; // <-- Change this number manually as your waitlist grows
+    const targetCount = 124;
     let currentCount = 0;
 
     function animateCounter() {
