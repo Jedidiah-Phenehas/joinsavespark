@@ -72,46 +72,46 @@
       color: #999;
     }
 
-    section#why {
-      padding: 60px 20px;
+    section#why, section#how-it-works {
       background: #fff;
+      padding: 60px 20px;
       max-width: 900px;
-      margin: 0 auto;
+      margin: 60px auto;
     }
 
-    section#why h2 {
+    section#why h2, section#how-it-works h2 {
       font-size: 28px;
       margin-bottom: 40px;
       font-weight: 800;
     }
 
-    .features {
+    .features, .steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      gap: 30px;
     }
 
-    .feature-card {
+    .feature-card, .step {
       background: #f9f9f9;
       border-radius: 12px;
       padding: 20px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.03);
     }
 
-    .feature-card span {
+    .feature-card span, .step span {
       font-size: 32px;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .feature-card h3 {
+    .feature-card h3, .step h3 {
       font-size: 18px;
       margin-bottom: 10px;
     }
 
-    .feature-card p {
+    .feature-card p, .step p {
       font-size: 14px;
-      color: #666;
+      color: #555;
     }
   </style>
 </head>
@@ -156,6 +156,28 @@
         <span>⚡</span>
         <h3>Set It & Forget It</h3>
         <p>Once rules are set, SaveSpark does the rest—no constant tracking needed.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works">
+    <h2>How SaveSpark Works</h2>
+    <div class="steps">
+      <div class="step">
+        <span>🔗</span>
+        <h3>Link Your Bank</h3>
+        <p>Connect your account safely using bank-grade security protocols.</p>
+      </div>
+      <div class="step">
+        <span>⚙️</span>
+        <h3>Set Smart Rules</h3>
+        <p>Decide how and when you want SaveSpark to move money to savings.</p>
+      </div>
+      <div class="step">
+        <span>⏳</span>
+        <h3>Let It Run</h3>
+        <p>SaveSpark runs automatically in the background — no effort needed.</p>
       </div>
     </div>
   </section>
