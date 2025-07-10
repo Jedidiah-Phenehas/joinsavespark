@@ -7,6 +7,10 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: #f0f2f5;
       font-family: 'Inter', sans-serif;
@@ -72,6 +76,10 @@
       color: #999;
     }
 
+    section {
+      margin-bottom: 60px;
+    }
+
     section#why, section#how-it-works {
       background: #fff;
       padding: 60px 20px;
@@ -113,67 +121,69 @@
       font-size: 14px;
       color: #555;
     }
-      #founder {
-  background: #f7f9fb;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  max-width: 800px;
-  margin: 60px auto;
-  padding: 60px 20px;
-  text-align: left;
-}
 
-#founder h2 {
-  font-size: 28px;
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 800;
-}
+    #founder {
+      background: #f7f9fb;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 60px 20px;
+      text-align: left;
+    }
 
-.founder-content p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 20px;
-}
+    #founder h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 800;
+    }
+
+    .founder-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
     #testimonials {
-  background: #ffffff;
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 100px auto;
-  text-align: center;
-}
+      background: #ffffff;
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 100px auto;
+      text-align: center;
+    }
 
-#testimonials h2 {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 40px;
-}
+    #testimonials h2 {
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 40px;
+    }
 
-.testimonial-list {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
+    .testimonial-list {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
 
-.testimonial {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-}
+    .testimonial {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
 
-.testimonial p {
-  font-size: 15px;
-  color: #333;
-  margin-bottom: 12px;
-}
+    .testimonial p {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 12px;
+    }
 
-.testimonial span {
-  font-size: 14px;
-  color: #777;
-  font-style: italic;
-}
+    .testimonial span {
+      font-size: 14px;
+      color: #777;
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -220,25 +230,18 @@
       </div>
     </div>
   </section>
-  
-<section id="founder">
-  <img src="founder.jpg" alt="Parimi Jedidiah" style="max-width:120px; border-radius:50%; margin-bottom:20px;" />
-  <h2>Meet the Founder</h2>
-  <div class="founder-content">
-    <p>
-      <strong>Built by someone who struggled to save — just like you.</strong>
-    </p>
-    <p>
-      I'm Parimi Jedidiah, and I created SaveSpark because I personally experienced the stress of inconsistent savings on a limited income.
-    </p>
-    <p>
-      I realized the missing piece wasn’t discipline — it was automation. I wanted a tool that did the saving <em>for me</em>. So I built it.
-    </p>
-    <p>
-      Today, SaveSpark helps others like me take back control of their money — without effort, guilt, or spreadsheets.
-    </p>
-  </div>
-</section>
+
+  <!-- Meet the Founder -->
+  <section id="founder">
+    <img src="founder.jpg" alt="Parimi Jedidiah" style="max-width:120px; border-radius:50%; margin-bottom:20px;" />
+    <h2>Meet the Founder</h2>
+    <div class="founder-content">
+      <p><strong>Built by someone who struggled to save — just like you.</strong></p>
+      <p>I'm Parimi Jedidiah, and I created SaveSpark because I personally experienced the stress of inconsistent savings on a limited income.</p>
+      <p>I realized the missing piece wasn’t discipline — it was automation. I wanted a tool that did the saving <em>for me</em>. So I built it.</p>
+      <p>Today, SaveSpark helps others like me take back control of their money — without effort, guilt, or spreadsheets.</p>
+    </div>
+  </section>
 
   <!-- How It Works Section -->
   <section id="how-it-works">
@@ -261,24 +264,25 @@
       </div>
     </div>
   </section>
-  
-<section id="testimonials">
-  <h2>What Early Users Are Saying</h2>
-  <div class="testimonial-list">
-    <div class="testimonial">
-      <p>“SaveSpark helped me save ₹10,000 in just 2 months — without thinking about it. This is exactly what I needed!”</p>
-      <span>— Priya M., Bangalore</span>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Early Users Are Saying</h2>
+    <div class="testimonial-list">
+      <div class="testimonial">
+        <p>“SaveSpark helped me save ₹10,000 in just 2 months — without thinking about it. This is exactly what I needed!”</p>
+        <span>— Priya M., Bangalore</span>
+      </div>
+      <div class="testimonial">
+        <p>“I always struggled with budgeting. SaveSpark made it automatic. I’m finally building a savings buffer.”</p>
+        <span>— Rahul D., Hyderabad</span>
+      </div>
+      <div class="testimonial">
+        <p>“The automation is a game changer. No guilt, no pressure. Just quiet progress.”</p>
+        <span>— Sneha P., Pune</span>
+      </div>
     </div>
-    <div class="testimonial">
-      <p>“I always struggled with budgeting. SaveSpark made it automatic. I’m finally building a savings buffer.”</p>
-      <span>— Rahul D., Hyderabad</span>
-    </div>
-    <div class="testimonial">
-      <p>“The automation is a game changer. No guilt, no pressure. Just quiet progress.”</p>
-      <span>— Sneha P., Pune</span>
-    </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     &copy; 2025 SaveSpark. All rights reserved.
