@@ -183,6 +183,71 @@
       font-size: 14px;
       color: #777;
       font-style: italic;
+      
+#pricing {
+  background: #ffffff;
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+#pricing h2 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+
+.pricing-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.plan {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 30px 20px;
+  width: 300px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: left;
+}
+
+.plan h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.plan .price {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2ecc71;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.plan ul li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #444;
+}
+
+.plan button {
+  width: 100%;
+  padding: 12px;
+  background: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: not-allowed;
+}
     }
   </style>
 </head>
@@ -283,6 +348,35 @@
       </div>
     </div>
   </section>
+  
+<!-- Pricing Section -->
+<section id="pricing">
+  <h2>Simple, Transparent Pricing</h2>
+  <div class="pricing-cards">
+    <div class="plan free">
+      <h3>Starter</h3>
+      <p class="price">Free</p>
+      <ul>
+        <li>✅ Link 1 bank account</li>
+        <li>✅ 2 smart rules</li>
+        <li>✅ Weekly savings summary</li>
+        <li>✅ No credit card required</li>
+      </ul>
+      <button disabled>You're Already In</button>
+    </div>
+    <div class="plan pro">
+      <h3>Pro</h3>
+      <p class="price">₹199/month</p>
+      <ul>
+        <li>✅ Unlimited smart rules</li>
+        <li>✅ Multiple account linking</li>
+        <li>✅ Real-time insights</li>
+        <li>✅ Priority support</li>
+      </ul>
+      <button>Coming Soon</button>
+    </div>
+  </div>
+</section>
 
   <footer>
     &copy; 2025 SaveSpark. All rights reserved.
