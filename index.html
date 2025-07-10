@@ -83,10 +83,11 @@
     }
 
     section#why, section#how-it-works {
-      background: #fff;
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 100px auto 60px;
+      margin: 60px auto 40px;
+}
+
     }
 
     section#why h2, section#how-it-works h2 {
@@ -128,9 +129,8 @@
       background: #f7f9fb;
       border-radius: 16px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      max-width: 800px;
-      margin: 100px auto;
-      padding: 60px 20px;
+      margin: 60px auto;
+      padding: 40px 20px;
       text-align: left;
     }
 
@@ -150,9 +150,9 @@
 
     #testimonials {
       background: #ffffff;
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 100px auto;
+      margin: 60px auto;
       text-align: center;
     }
 
@@ -189,9 +189,9 @@
 
     #pricing {
       background: #ffffff;
-      padding: 60px 20px;
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 100px auto;
+      margin: 60px auto;
       text-align: center;
     }
 
@@ -251,6 +251,20 @@
       font-weight: 600;
       cursor: not-allowed;
     }
+    @media (max-width: 768px) {
+  section, #founder, #testimonials, #pricing {
+    margin: 40px auto !important;
+    padding: 30px 16px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  .features, .steps, .testimonial-list {
+    gap: 20px;
+  }
+}
   </style>
 </head>
 <body>
