@@ -3,421 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join SaveSpark – Automate Your Savings</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
 
+  <title>SaveSpark – Automate Your Savings Effortlessly</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="SaveSpark helps automate your savings effortlessly. Join the waitlist to start saving smarter and build financial freedom." />
+  <meta name="keywords" content="SaveSpark, automated savings, personal finance, finance app, save money, smart saving, savings automation, fintech, budgeting tool" />
+  <meta name="author" content="Parimi Jedidiah" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://joinsavespark.com/" />
+
+  <!-- Open Graph for Social Media -->
+  <meta property="og:title" content="SaveSpark – Automate Your Savings Effortlessly" />
+  <meta property="og:description" content="Join SaveSpark to automate your savings and grow your money passively. Start your financial journey today." />
+  <meta property="og:url" content="https://joinsavespark.com/" />
+  <meta property="og:image" content="https://joinsavespark.com/assets/og-image.png" /> <!-- Replace with actual image -->
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SaveSpark – Automate Your Savings Effortlessly" />
+  <meta name="twitter:description" content="Join SaveSpark to automate your savings and grow your money passively." />
+  <meta name="twitter:image" content="https://joinsavespark.com/assets/og-image.png" /> <!-- Replace with actual image -->
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts & Styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
+  <style>
     body {
-      background-color: #f0f2f5;
       font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
       margin: 0;
       padding: 0;
-      color: #333;
       text-align: center;
     }
 
-    .container {
-      max-width: 500px;
-      margin: 10px auto 40px;
-      background: #fff;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    header {
+      padding: 2rem;
     }
 
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      font-weight: 800;
     }
 
     p {
-      font-size: 16px;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      color: #4b5563;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
     }
 
     input[type="email"] {
-      padding: 12px;
-      width: 80%;
+      padding: 0.75rem;
+      width: 280px;
       border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 15px;
-      font-size: 16px;
+      border: 1px solid #d1d5db;
+      font-size: 1rem;
     }
 
     button {
-      padding: 12px 24px;
-      border-radius: 8px;
-      background: #2ecc71;
-      color: #fff;
+      padding: 0.75rem 1.5rem;
+      background-color: #2563eb;
+      color: white;
+      font-size: 1rem;
       border: none;
-      font-weight: 600;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
     }
 
-    #thank-you {
-      display: none;
-      margin-top: 20px;
-      color: green;
-      font-weight: 600;
-    }
-
-    img.logo {
-      max-width: 160px;
-      margin-bottom: 20px;
+    button:hover {
+      background-color: #1e40af;
     }
 
     footer {
-      margin: 40px auto;
-      font-size: 14px;
-      color: #999;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: #6b7280;
     }
 
-    section {
-      margin-bottom: 60px;
-    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
 
-    section#why, section#how-it-works {
-      background: #fff;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 60px auto;
-    }
+      p {
+        font-size: 1rem;
+      }
 
-    section#why h2, section#how-it-works h2 {
-      font-size: 28px;
-      margin-bottom: 40px;
-      font-weight: 800;
-    }
-
-    .features, .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-    }
-
-    .feature-card, .step {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-    }
-
-    .feature-card span, .step span {
-      font-size: 32px;
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .feature-card h3, .step h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .feature-card p, .step p {
-      font-size: 14px;
-      color: #555;
-    }
-
-    #founder {
-      background: #f7f9fb;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 60px 20px;
-      text-align: left;
-    }
-
-    #founder h2 {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 30px;
-      font-weight: 800;
-    }
-
-    .founder-content p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    #testimonials {
-      background: #ffffff;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 60px auto;
-      text-align: center;
-    }
-
-    #testimonials h2 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 40px;
-    }
-
-    .testimonial-list {
-      display: grid;
-      gap: 30px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-
-    .testimonial {
-      background: #f8f9fa;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
-
-    .testimonial p {
-      font-size: 15px;
-      color: #333;
-      margin-bottom: 12px;
-    }
-
-    .testimonial span {
-      font-size: 14px;
-      color: #777;
-      font-style: italic;
-    }
-
-    #pricing {
-      background: #ffffff;
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: 60px auto;
-      text-align: center;
-    }
-
-    #pricing h2 {
-      font-size: 28px;
-      font-weight: 800;
-      margin-bottom: 40px;
-    }
-
-    .pricing-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-    }
-
-    .plan {
-      background: #f8f9fa;
-      border-radius: 16px;
-      padding: 30px 20px;
-      width: 300px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      text-align: left;
-    }
-
-    .plan h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .plan .price {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: #2ecc71;
-    }
-
-    .plan ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
-    }
-
-    .plan ul li {
-      margin-bottom: 10px;
-      font-size: 15px;
-      color: #444;
-    }
-
-    .plan button {
-      width: 100%;
-      padding: 12px;
-      background: #2ecc71;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: not-allowed;
+      input[type="email"] {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Automate Your Savings with SaveSpark</h1>
+    <p>Join the waitlist to get early access to SaveSpark — your smart personal finance automation tool.</p>
 
-<!-- Hero Section -->
-<section style="padding: 20px 20px 10px; margin-bottom: 0;">
-  <h2 style="font-size: 26px; font-weight: 800;">Ready to take control of your money?</h2>
-  <p style="margin-bottom: 10px;">Join SaveSpark and start saving automatically.</p>
-  <a href="#waitlist-form">
-    <button style="margin-top: 10px;">Join the Waitlist</button>
-  </a>
-</section>
+    <form id="waitlist-form" action="https://formspree.io/f/mgvyqooa" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join Waitlist</button>
+    </form>
+  </header>
 
-<!-- Waitlist Form -->
-<div class="container">
-  <img src="logo.png" alt="SaveSpark Logo" class="logo" />
-  <h1>Join SaveSpark</h1>
-  <p>Be the first to automate your savings and take control of your money.</p>
-
-  <form id="waitlist-form" action="https://usebasin.com/f/86748ffb3449" method="POST" onsubmit="return showThankYou(event)">
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <input type="hidden" name="_redirect" value="https://jedidiah-phenehas.github.io/joinsavespark/thankyou.html" />
-    <br>
-    <button type="submit">Join Waitlist</button>
-  </form>
-
-  <div id="thank-you">
-    ✅ Thank you! You're on the waitlist.
-  </div>
-</div>
-
-<!-- Why SaveSpark -->
-<section id="why">
-  <h2>Why SaveSpark Exists</h2>
-  <div class="features">
-    <div class="feature-card">
-      <span>💡</span>
-      <h3>Smart Rules</h3>
-      <p>Automate savings based on spending behavior, income, or time intervals.</p>
-    </div>
-    <div class="feature-card">
-      <span>📊</span>
-      <h3>Real Insights</h3>
-      <p>Understand your money habits with clean, clear dashboards and trends.</p>
-    </div>
-    <div class="feature-card">
-      <span>🔒</span>
-      <h3>Secure by Design</h3>
-      <p>We never access your money—only help you move it safely between your own accounts.</p>
-    </div>
-    <div class="feature-card">
-      <span>⚡</span>
-      <h3>Set It & Forget It</h3>
-      <p>Once rules are set, SaveSpark does the rest—no constant tracking needed.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Founder -->
-<section id="founder">
-  <img src="founder.jpg" alt="Parimi Jedidiah" style="max-width:120px; border-radius:50%; margin-bottom:20px;" />
-  <h2>Meet the Founder</h2>
-  <div class="founder-content">
-    <p><strong>Built by someone who struggled to save — just like you.</strong></p>
-    <p>I'm Parimi Jedidiah, and I created SaveSpark because I personally experienced the stress of inconsistent savings on a limited income.</p>
-    <p>I realized the missing piece wasn’t discipline — it was automation. I wanted a tool that did the saving <em>for me</em>. So I built it.</p>
-    <p>Today, SaveSpark helps others like me take back control of their money — without effort, guilt, or spreadsheets.</p>
-  </div>
-</section>
-
-<!-- How It Works -->
-<section id="how-it-works">
-  <h2>How SaveSpark Works</h2>
-  <div class="steps">
-    <div class="step">
-      <span>🔗</span>
-      <h3>Link Your Bank</h3>
-      <p>Connect your account safely using bank-grade security protocols.</p>
-    </div>
-    <div class="step">
-      <span>⚙️</span>
-      <h3>Set Smart Rules</h3>
-      <p>Decide how and when you want SaveSpark to move money to savings.</p>
-    </div>
-    <div class="step">
-      <span>⏳</span>
-      <h3>Let It Run</h3>
-      <p>SaveSpark runs automatically in the background — no effort needed.</p>
-    </div>
-  </div>
-</section>
-
-<!-- Testimonials -->
-<section id="testimonials">
-  <h2>What Early Users Are Saying</h2>
-  <div class="testimonial-list">
-    <div class="testimonial">
-      <p>“SaveSpark helped me save ₹10,000 in just 2 months — without thinking about it. This is exactly what I needed!”</p>
-      <span>— Priya M., Bangalore</span>
-    </div>
-    <div class="testimonial">
-      <p>“I always struggled with budgeting. SaveSpark made it automatic. I’m finally building a savings buffer.”</p>
-      <span>— Rahul D., Hyderabad</span>
-    </div>
-    <div class="testimonial">
-      <p>“The automation is a game changer. No guilt, no pressure. Just quiet progress.”</p>
-      <span>— Sneha P., Pune</span>
-    </div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section id="pricing">
-  <h2>Simple, Transparent Pricing</h2>
-  <div class="pricing-cards">
-    <div class="plan free">
-      <h3>Starter</h3>
-      <p class="price">Free</p>
-      <ul>
-        <li>✅ Link 1 bank account</li>
-        <li>✅ 2 smart rules</li>
-        <li>✅ Weekly savings summary</li>
-        <li>✅ No credit card required</li>
-      </ul>
-      <button disabled>You're Already In</button>
-    </div>
-    <div class="plan pro">
-      <h3>Pro</h3>
-      <p class="price">₹199/month</p>
-      <ul>
-        <li>✅ Unlimited smart rules</li>
-        <li>✅ Multiple account linking</li>
-        <li>✅ Real-time insights</li>
-        <li>✅ Priority support</li>
-      </ul>
-      <button>Coming Soon</button>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  &copy; 2025 SaveSpark. All rights reserved.
-</footer>
-
-<!-- JS: Thank You Message -->
-<script>
-  function showThankYou(event) {
-    event.preventDefault();
-    const form = document.getElementById('waitlist-form');
-    const thankYou = document.getElementById('thank-you');
-    const formData = new FormData(form);
-
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        form.style.display = "none";
-        thankYou.style.display = "block";
-      } else {
-        alert("Oops! There was a problem. Please try again.");
-      }
-    });
-
-    return false;
-  }
-</script>
-
+  <footer>
+    &copy; 2025 SaveSpark. All rights reserved.
+  </footer>
 </body>
 </html>
