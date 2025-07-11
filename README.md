@@ -1,7 +1,9 @@
-## 🌐 Live Site
+## 👋 Welcome to SaveSpark
 
-Check out SaveSpark:  
-👉 [https://jedidiah-phenehas.github.io/joinsavespark/](https://jedidiah-phenehas.github.io/joinsavespark/)
+SaveSpark helps automate your savings effortlessly.  
+💡 Live site: [JoinSaveSpark.com](https://jedidiah-phenehas.github.io/joinsavespark/)
+
+Built by [Parimi Jedidiah](https://orcid.org/0000-0000-0000-0000) — self-taught and savings-obsessed.
 
 # savespark
 
