@@ -1,3 +1,4 @@
+<!-- PLACE THIS FULL HTML INTO index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Join SaveSpark – Automate Your Savings</title>
 
-  <!-- SEO Tags -->
+  <!-- SEO & Google Verification -->
   <meta name="description" content="SaveSpark helps automate your savings effortlessly. Join the waitlist to start saving smarter and build financial freedom." />
-  <meta name="keywords" content="SaveSpark, automated savings, personal finance, finance app, save money, smart saving, fintech, savings automation" />
+  <meta name="keywords" content="SaveSpark, automated savings, personal finance, fintech, save money, budgeting" />
   <meta name="author" content="Parimi Jedidiah" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://joinsavespark.com/" />
   <meta name="google-site-verification" content="lgmqKkt1kHYObvgbX2a0i8camOfIu-meNEYrFYHIJ1M" />
+  <link rel="canonical" href="https://joinsavespark.com/" />
 
   <!-- Social Sharing -->
   <meta property="og:title" content="SaveSpark – Automate Your Savings Effortlessly" />
@@ -25,11 +26,10 @@
   <meta name="twitter:description" content="Join SaveSpark to automate your savings and grow your money passively." />
   <meta name="twitter:image" content="https://jedidiah-phenehas.github.io/joinsavespark/assets/og-image.png" />
 
-  <!-- Favicon & Fonts -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- Fonts & Styles -->
+  <link rel="icon" href="favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
   <style>
     html { scroll-behavior: smooth; }
     body {
@@ -50,15 +50,8 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 20px;
-    }
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    p { font-size: 16px; margin-bottom: 20px; }
 
     input[type="email"] {
       padding: 12px;
@@ -108,8 +101,7 @@
       margin: 40px auto;
     }
 
-    section#why h2, section#how-it-works h2,
-    #testimonials h2, #pricing h2 {
+    section h2 {
       font-size: 28px;
       margin-bottom: 30px;
       font-weight: 800;
@@ -181,7 +173,7 @@
 
 <body>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section>
   <h2 style="font-size: 26px; font-weight: 800;">Ready to take control of your money?</h2>
   <p>Join SaveSpark and start saving automatically.</p>
@@ -212,7 +204,7 @@
   </div>
 </section>
 
-<!-- Founder Section -->
+<!-- Founder -->
 <section id="founder">
   <img src="assets/founder.jpg" alt="Parimi Jedidiah" style="max-width:120px; border-radius:50%; margin-bottom:20px;" />
   <h2>Meet the Founder</h2>
@@ -234,12 +226,41 @@
   </div>
 </section>
 
+<!-- Pricing Section -->
+<section id="pricing">
+  <h2>Simple, Transparent Pricing</h2>
+  <div class="pricing-cards">
+    <div class="plan">
+      <h3>Starter</h3>
+      <p class="price">Free</p>
+      <ul>
+        <li>✅ Link 1 bank account</li>
+        <li>✅ 2 smart rules</li>
+        <li>✅ Weekly savings summary</li>
+        <li>✅ No credit card required</li>
+      </ul>
+      <button disabled>You're Already In</button>
+    </div>
+    <div class="plan">
+      <h3>Pro</h3>
+      <p class="price">₹199/month</p>
+      <ul>
+        <li>✅ Unlimited smart rules</li>
+        <li>✅ Multiple account linking</li>
+        <li>✅ Real-time insights</li>
+        <li>✅ Priority support</li>
+      </ul>
+      <button>Coming Soon</button>
+    </div>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer>
   &copy; 2025 SaveSpark. All rights reserved.
 </footer>
 
-<!-- Thank You JS -->
+<!-- JS -->
 <script>
   function showThankYou(event) {
     event.preventDefault();
@@ -263,5 +284,6 @@
     return false;
   }
 </script>
+
 </body>
 </html>
